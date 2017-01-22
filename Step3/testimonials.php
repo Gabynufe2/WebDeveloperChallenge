@@ -63,7 +63,7 @@ Template Name: Testimonials Page
 
 							$testimonials_args = array (
 								'post_type' => 'testimonials',
-								'posts_per_page' => -1,
+								'posts_per_page' => 6,
 								'orderby' => 'date',
 								'order' => 'DESC'
 							);
@@ -88,7 +88,7 @@ Template Name: Testimonials Page
 										<div class="quote" itemprop="review" itemscope="" itemtype="http://schema.org/Review">
 
 											<blockquote class="testimonials-text" itemprop="reviewBody">
-												<p><?php the_content(); ?></p>
+												<p><?php substr(the_content(), 0, 100); ?> ...</p>
 												<hr>
 												<p><i><?php the_date(); ?></i></p>
 											</blockquote>
@@ -98,7 +98,7 @@ Template Name: Testimonials Page
 											<?php endif; ?>
 
 											<cite class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-												<span itemprop="name"><?php the_title(); ?></span>
+												<span itemprop="name"><a href="?t=<?php echo $post->ID; ?>"><?php the_title(); ?></a></span>
 											</cite><!--/.author-->
 
 										</div><!-- End .quote -->

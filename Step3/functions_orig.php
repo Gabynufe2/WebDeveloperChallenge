@@ -1,32 +1,6 @@
 <?php
 
 add_filter('gform_register_init_scripts', 'gform_display_weeks', 10, 2);
-//--------------------------------------------------------------------------------------------
-//Al terminar de cargarse la página, se ejecuta el script indicado en la variable $script
-//
-// dentro del script:
-// la variable vals contiene 6 objetos, uno para cada lenguage
-// cada objeto contiene los nombres de campo asignados y el texto en el lenguaje del objeto.
-//
-// getTotalDaysFrom calcula el número de días desde una fecha pasada por parametro hasta la fecha del sistema
-// getSelectedDate transforma una fecha en formato texto a date
-// getWeeks calcula el número de semanas enteras, pasando como parámetro un número de días
-// getDays calcula el número de días adicionales a las semanas enteras, pasando como parámetro un número de días
-// getWeekText añade el número de semanas a un texto pasado por parámetro (solo si semanas > 0)
-// getDayText añade el número de días a un texto pasado por parámetro (solo si dias > 0)
-// getAndText regresa un texto pasado por parámetro solo si semanas>0 y dias > 0, de otra forma regresa un texto en blanco
-// getEstimatedLMPText regresa un texto en formato: "# semanas y # días" en el lenguaje seleccionado
-// setTenWeekReminder reemplaza o agrega texto al campo tenWeekReminder
-// hideTenWeekReminder esconde el campo tenWeekReminder
-// updateWeeksLabel reemplaza el campo labelSelector por un texto pasado por parámetro/
-//
-// handleDateChange se ejecuta cada vez que se cambia algún campo de la fecha en un formulario y se
-// encarga de mostrar en le lenguaje seleccionado el número de semanas y días transcurridos desde 
-// la fecha seleccionada en el formulario
-// 
-//
-//--------------------------------------------------------------------------------------------
-
 function gform_display_weeks($form) {
 
 $script = <<<EOT
@@ -414,17 +388,6 @@ function bones_register_sidebars() {
     'after_widget' => '</div>',
     'before_title' => '<h2 class="h3 module__title">',
     'after_title' => '</h2>',
-  ));
-
-  register_sidebar(array(
-    'id' => 'sidebar-advertising',
-    'name' => __( '%3$s', 'bonestheme' ),
-    'description' => __( '%4$s', 'bonestheme' ),
-    'before_widget' => '<div id="%1$s" class="module module--primary cf %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3 class="module__title">',
-    'after_title' => '</h3>',
-    'domain' => 'safe2choose-test'
   ));
 
   
