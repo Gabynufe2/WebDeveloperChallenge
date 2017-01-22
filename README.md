@@ -4,7 +4,7 @@
 * Create a Github account. For privacy and security reasons, create a new Github account just for these exercises
 * Clone this repository https://github.com/cecilia-s2c/WebDeveloperChallenge and copy the contents into the new project you just created.
 
-# Step 1: Code review
+# Step 1: Code review (NOT DONE)
 * Review the code into the "Step1" folder for security vulnerabilities. This Meteor project is meant to keep track of the number of times each user clicks on the button on the client. The count per user is recorded in two places: On the Meteor server that the app is connected to. On a server located at secure.safe2choose.org (this server does not actually exist).
 * Only the counts of users who have signed in with Twitter need to be securely stored. The count of users who are not logged in is irrelevant.
 * Although this code will compile, it should be treated as pseudo-code. Do not worry about inefficient or ugly code. You are only looking for vulnerabilities that would allow users to abuse the system or issues that would give hackers with access to the code the ability to compromise different parts of the system (assuming those components actually existed).
